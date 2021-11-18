@@ -1,5 +1,6 @@
+
 //Display today's date in header
-var todayDate = moment().format('MMM Do YY');
+var todayDate = moment().format('MMM Do YYYY');
 $("#currentDay").html(todayDate);
 
 $(document).ready(function() {
@@ -12,7 +13,7 @@ $(document).ready(function() {
         localStorage.setItem(time,text);
         
     }) 
-function timeTracker () {
+    function timeTracker () {
     var timeNow = moment().hours();
 
     //loop over time blocks until
@@ -27,7 +28,7 @@ function timeTracker () {
         }
         else if (blockTime === timeNow) {
             $(this).removeClass("past"); 
-            $(this).removeClas("future"); 
+            $(this).removeClass("future"); 
             $(this).addClass("present"); 
         }
         else {
@@ -37,6 +38,7 @@ function timeTracker () {
         }
     })
 }
+
 
 //get item from localStorage
 $("#hour8 .description").val(localStorage.getItem("hour8")); 
