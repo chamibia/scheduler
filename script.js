@@ -5,12 +5,13 @@ $("#currentDay").html(todayDate);
 
 $(document).ready(function() {
     //saveBtn click listener for
-    $(".saveBtn").on("click", function () {
+    $(".saveBtn").on("click", function (event) {
+        //define time and description variables
         var text = $(this).siblings("description").val(); 
         var time = $(this).parent().attr("id"); 
 
         //save to local storage
-        localStorage.setItem(time,text);
+        localStorage.setItem(text, time);
         
     }) 
     function timeTracker () {
@@ -25,13 +26,11 @@ $(document).ready(function() {
             $(this).removeClass("future"); 
             $(this).removeClass("present");
             $(this).addClass("past"); 
-        }
-        else if (blockTime === timeNow) {
+        } else if (blockTime === timeNow) {
             $(this).removeClass("past"); 
             $(this).removeClass("future"); 
             $(this).addClass("present"); 
-        }
-        else {
+        } else {
             $(this).removeClass("present"); 
             $(this).removeClass("past"); 
             $(this).addClass("future"); 
