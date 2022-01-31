@@ -8,7 +8,7 @@
 
 - HTML
 - CSS
-- Javascript
+- jQuery
 
 ## Deployed page:
 
